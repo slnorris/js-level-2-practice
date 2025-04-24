@@ -36,3 +36,46 @@ function boxClickHandler(event) {
 
 // FORM 
 
+let loginFormElement = document.getElementById("login-form");
+let loginStatusElement = document.getElementById("login-status");
+loginFormElement.addEventListener("submit", loginFormEventHandler);
+
+function loginFormEventHandler(event) {
+  event.preventDefault();
+  loginStatusElement.innerHTML = `Logged in as ${event.target["username-input"].value}`;
+  event.target.reset();
+}
+
+// FORM VALIDATION
+
+let usernameValidationElement = document.getElementById("username-validation");
+let usernameInputElement = document.getElementById("username-input");
+// this listens to the input as it is being typed
+
+
+// on input event handler for username input
+usernameInputElement.addEventListener("input", handleValidateUsername)
+
+function handleValidateUsername(event) {
+  event.preventDefault();
+
+  if(event.target.value.length < 5) {
+    usernameValidationElement.innerHTML = "Please enter more than 5 characters"
+  } else {
+    usernameValidationElement.innerHTML = "Hiii there!"
+  }
+
+}
+
+// ******************************************************
+// IMPLEMENTING DARK MODE & LIGHT MODE
+// STEP 1 implement a class in CSS
+let darkModeButtonElement = document.getElementById("dark-mode");
+
+darkModeButtonElement.addEventListener("click", handleToggleDarkMode)
+
+function handleToggleDarkMode(event) {
+  event.preventDefault();
+
+  document.body.classList.toggle("dark");
+}

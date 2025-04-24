@@ -9,30 +9,51 @@
   <body>
     <header>
       <h1>JS Events</h1>
+      <button id="dark-mode">Dark Mode</button>
 
       <button id="counter-btn">Click Me!</button>
       <p id="counter-output">Clicked 0 Times</p>
     </header>
     <main>
-
-        <section id="bg-color-picker">
-            <h2>Change the Background Color</h2>
+      <section id="bg-color-picker">
+        <h2>Change the Background Color</h2>
         <div class="box">
-            <p>Blue</p>
+          <p>Blue</p>
         </div>
 
         <div class="box">
-            <p>Green</p>
+          <p>Green</p>
         </div>
 
         <div class="box">
-            <p>Purple</p>
+          <p>Purple</p>
         </div>
-        </section>
+      </section>
 
+      <section>
+        <h2 id="login-status">Logged Out</h2>
         <form id="login-form">
-            <input type="text" name="username" id="">
+          <fieldset>
+            <p id="username-validation"></p>
+            <label for="username-input">Username</label>
+            <input
+              required
+              type="text"
+              name="username-input"
+              id="username-input"
+            />
+
+            <label for="password-input">Password</label>
+            <input
+              required
+              type="password"
+              name="password-input"
+              id="password-input"
+            />
+            <button type="submit">Login</button>
+          </fieldset>
         </form>
+      </section>
     </main>
     <footer></footer>
     <script src="script.js"></script>
