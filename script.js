@@ -27,14 +27,14 @@ for (let elem of boxElements) {
 
 function boxClickHandler(event) {
   event.preventDefault();
-  document.body.style.backgroundColor = event.target.firstElementChild.textContent;
+  document.body.style.backgroundColor =
+    event.target.firstElementChild.textContent;
   console.log("box click handler");
 }
 
-
 // *************************************************************************
 
-// FORM 
+// FORM
 
 let loginFormElement = document.getElementById("login-form");
 let loginStatusElement = document.getElementById("login-status");
@@ -52,19 +52,17 @@ let usernameValidationElement = document.getElementById("username-validation");
 let usernameInputElement = document.getElementById("username-input");
 // this listens to the input as it is being typed
 
-
 // on input event handler for username input
-usernameInputElement.addEventListener("input", handleValidateUsername)
+usernameInputElement.addEventListener("input", handleValidateUsername);
 
 function handleValidateUsername(event) {
   event.preventDefault();
 
-  if(event.target.value.length < 5) {
-    usernameValidationElement.innerHTML = "Please enter more than 5 characters"
+  if (event.target.value.length < 5) {
+    usernameValidationElement.innerHTML = "Please enter more than 5 characters";
   } else {
-    usernameValidationElement.innerHTML = "Hiii there!"
+    usernameValidationElement.innerHTML = "Hiii there!";
   }
-
 }
 
 // ******************************************************
@@ -72,10 +70,33 @@ function handleValidateUsername(event) {
 // STEP 1 implement a class in CSS
 let darkModeButtonElement = document.getElementById("dark-mode");
 
-darkModeButtonElement.addEventListener("click", handleToggleDarkMode)
+darkModeButtonElement.addEventListener("click", handleToggleDarkMode);
 
 function handleToggleDarkMode(event) {
   event.preventDefault();
-
   document.body.classList.toggle("dark");
+  // if the body has a class of dark, show "light mode" on the btn
+  // console.log(document.body.classList[0]);
+  // if (document.body.classList[0] === "dark") {
+  //   darkModeButtonElement.innerHTML = "light";
+  // } else {
+  //   darkModeButtonElement.innerHTML = "dark";
+  // }
+
+  document.body.classList[0] === "dark"
+    ? (darkModeButtonElement.innerHTML = "light")
+    : (darkModeButtonElement.innerHTML = "dark");
 }
+
+// TERNARY STATEMENTS
+//  conditional statements with 3 operands
+// WTF - What ? True : False
+// condition to evaluate ? do this if true : do this if false
+// let something = true;
+
+// something ? console.log('something is true... do this') : console.log("do this if false!")
+// if(something === true) {
+//   console.log("something is true... do this")
+// } else if (something===false) {
+//   console.log("do this if false!")
+// }
